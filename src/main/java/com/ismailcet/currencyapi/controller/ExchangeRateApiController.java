@@ -17,9 +17,9 @@ public class ExchangeRateApiController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> exchangeRateApi(@RequestBody ExchangeRateRequest exchangeRateRequest) throws IOException, InterruptedException {
+    public ResponseEntity<String> exchangeRateApi(@RequestBody ExchangeRateRequest exchangeRateRequest, @RequestHeader String apikey) throws IOException, InterruptedException {
         return ResponseEntity.ok(
-                exchangeRateApiService.exchangeRateApi(exchangeRateRequest)
+                exchangeRateApiService.exchangeRateApi(exchangeRateRequest, apikey)
         );
     }
 }
